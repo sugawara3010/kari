@@ -1,6 +1,9 @@
 画面遷移図
 https://www.figma.com/design/RDYwYyyTMXEo2g5KCnOFN6/Untitled?node-id=0-1&t=7e6YCCMM6lQLE7Sg-0
 
+ER図
+https://app.diagrams.net/#
+
 ■サービス概要
 目標が表示されていて目標達成のために一週間ごと１ヶ月ごとに振り返ることができる。
 目標達成したら達成率をグラフ化してくれるアプリです。
