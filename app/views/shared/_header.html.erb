@@ -1,0 +1,34 @@
+<header>
+  <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
+    <%= link_to '/', class: 'navbar-brand' do %>
+    <% end %>
+    <button class='navbar-toggler' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
+      aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+      <span class='navbar-toggler-icon'></span>
+    </button>
+
+    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+      <ul class='navbar-nav ms-auto main-nav align-items-center'>
+        <% if user_signed_in? %>
+          <!-- ログイン後のメニュー -->
+          <li class='nav-item dropdown dropdown-slide'>
+            <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
+              <%= "ログイン中" %>  <!-- 現在のユーザー名を表示 -->
+            <% end %>
+            <div class='dropdown-menu dropdown-menu-end'>
+              <div class='dropdown-item'><%= current_user.name %></div>
+              <div class='dropdown-divider'></div>
+              <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
+              <%= link_to 'ログアウト', logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
+            </div>
+          </li>
+        <% else %>
+          <!-- ログイン前のメニュー -->
+          <li class='nav-item'>
+            <%= link_to 'ログイン', login_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
