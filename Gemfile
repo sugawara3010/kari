@@ -59,3 +59,5 @@ group :test do
 end
 
 gem "sorcery"
+
+gem "simple_calendar", "~> 2.0"
